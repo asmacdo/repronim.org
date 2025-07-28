@@ -60,6 +60,11 @@ params:
     enable: true
     base: "https://github.com/ReproNIM/repronim.org/edit/main/content"
 
+  issueURL:
+    enable: true
+    base: "https://github.com/ReproNIM/repronim.org/issues/new"
+    params: "?template=content-issue.md&title=Issue with page: "
+
   theme:
     # light | dark | system
     default: light

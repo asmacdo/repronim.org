@@ -1,0 +1,21 @@
+{{- $toc := .TableOfContents -}}
+
+{{- if $toc -}}
+  <div class="hx-order-last hx-hidden hx-w-64 hx-shrink-0 xl:hx-block print:hx-hidden hx-px-4">
+    <div class="hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:-hx-mr-4 rtl:-hx-ml-4">
+      <p class="hx-mb-4 hx-font-semibold hx-tracking-tight hx-text-slate-900 dark:hx-text-slate-100">
+        {{ (i18n "toc") | default "On this page" }}
+      </p>
+      <div class="hextra-toc">
+        {{ $toc }}
+      </div>
+      {{ partial "toc-footer.html" . }}
+    </div>
+  </div>
+{{- else -}}
+  <div class="hx-order-last hx-hidden hx-w-64 hx-shrink-0 xl:hx-block print:hx-hidden hx-px-4">
+    <div class="hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:-hx-mr-4 rtl:-hx-ml-4">
+      {{ partial "toc-footer.html" . }}
+    </div>
+  </div>
+{{- end -}}
